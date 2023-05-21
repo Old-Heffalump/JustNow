@@ -7,9 +7,12 @@ fun main(args: Array<String>) {
     println( agoToText(60*60*24*3))
     println( agoToText(60*24))
     println( agoToText(60*21))
+    println( agoToText(60*11))
+
 
 
 }
+
 
 fun agoToText(second: Int):String {
 
@@ -31,19 +34,19 @@ fun agoToText(second: Int):String {
         }
         else -> return ("был(а) давно")
     }
-
 }
 
 fun timeAgoTextMinute(second: Int ): String{
     val minute: Int = second.div(60)
 
     return when{
-        minute % 10 == 1 -> {
-            "$minute минуту"
-        }
         minute % 10 in 5..9 || minute in 11..14 -> {
             "$minute минут"
         }
+        minute % 10 == 1 -> {
+            "$minute минуту"
+        }
+
         else -> {
             "$minute минуты"
         }
